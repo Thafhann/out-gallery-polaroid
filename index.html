@@ -11,6 +11,9 @@
       <div class="title-div">
         <h1 class="title">Our Gallery Polarid</h1>
       </div>
+      <div class="play-music">
+        <button id="play-button">Play Music</button>
+      </div>
       <div>
         <div class="col-title">
           <img src="images/IMG-20240812-WA0000.jpg" alt="Foto 1" />
@@ -108,23 +111,29 @@
     </audio>
 
     <script>
-      let isMusicPlaying = false;
+      const playButton = document.getElementById("play-button");
+      const audio = document.getElementById("background-music");
 
-      window.addEventListener("scroll", function () {
-        const audio = document.getElementById("background-music");
-
-        if (!isMusicPlaying && window.scrollY > 50) {
-          // Memastikan ada scroll yang cukup (misalnya lebih dari 100px)
-          audio
-            .play()
-            .then(() => {
-              isMusicPlaying = true;
-            })
-            .catch((error) => {
-              console.log("Autoplay blocked:", error);
-            });
-        }
+      playButton.addEventListener("click", function () {
+        audio.play();
       });
+      // let isMusicPlaying = false;
+
+      // window.addEventListener("scroll", function () {
+      //   const audio = document.getElementById("background-music");
+
+      //   if (!isMusicPlaying && window.scrollY > 50) {
+      //     // Memastikan ada scroll yang cukup (misalnya lebih dari 100px)
+      //     audio
+      //       .play()
+      //       .then(() => {
+      //         isMusicPlaying = true;
+      //       })
+      //       .catch((error) => {
+      //         console.log("Autoplay blocked:", error);
+      //       });
+      //   }
+      // });
     </script>
   </body>
 </html>

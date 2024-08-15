@@ -83,6 +83,28 @@
     text-align: center;
 }
 
+.play-music {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    text-align: center;
+    z-index: 99;
+  }
+  
+  #play-button {
+    background-color: #004d40;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  #play-button:hover {
+    background-color: #003d33;
+  }
+
 @media only screen and (max-width: 500px) {
     .title-div {
         width: 100%;
@@ -121,5 +143,9 @@
     }
     .col-title img {
         height: 200px;
+    }
+
+    .title {
+        font-size: 36px;
     }
 }
