@@ -104,15 +104,27 @@
     </div>
 
     <audio id="background-music" loop>
-      <source
-        src="music/Nisya Ahmad  Di Seluruh Dunia Official Lyric.mp3"
-        type="audio/mp3"
-      />
-      Your browser does not support the audio element.
+      <source src="music/diSeluruhDunia.mp3" type="audio/mp3" />
     </audio>
 
     <script>
-      document.getElementById("background-music").play();
+      let isMusicPlaying = false;
+
+      window.addEventListener("scroll", function () {
+        const audio = document.getElementById("background-music");
+
+        if (!isMusicPlaying && window.scrollY > 50) {
+          // Memastikan ada scroll yang cukup (misalnya lebih dari 100px)
+          audio
+            .play()
+            .then(() => {
+              isMusicPlaying = true;
+            })
+            .catch((error) => {
+              console.log("Autoplay blocked:", error);
+            });
+        }
+      });
     </script>
   </body>
 </html>
